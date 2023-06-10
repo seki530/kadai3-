@@ -21,16 +21,16 @@
       <ul class="navbar-nav ml-auto">
     <% if user_signed_in? %>
       <li>
-        <font _mstmutation="1"><%= link_to "Home", users_path, class: 'nav-link text-right' %></font>
+        <font _mstmutation="1"><%= link_to "Home", user_path(current_user),class: 'nav-link text-right' %></font>
       </li>
       <li>
-        Users
+        <font _mstmutation="1"><%= link_to "Users", users_path, class: 'nav-link text-right' %></font>
       </li>
       <li>
         <font _mstmutation="1"><%= link_to "Books", books_path, class: 'nav-link text-right' %></font>
       </li>
       <li>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <font _mstmutation="1"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-right' %></font>
       </li>
     <% else %>
       <li>
@@ -50,6 +50,7 @@
     </div>
   </nav>
   </header>
+  <%= flash[:notice] %>
     <%= yield %>
     <footer>
       <div class="container mt-5">
