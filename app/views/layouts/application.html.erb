@@ -18,35 +18,65 @@
       <a class="navbar-brand" href="/">
         <span>Bookers</span>
       </a>
-      <ul class="navbar-nav ml-auto">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
     <% if user_signed_in? %>
       <li>
-        <font _mstmutation="1"><%= link_to "Home", user_path(current_user),class: 'nav-link text-right' %></font>
+        <%= link_to  user_path(current_user),class: "nav-link text-light" do %>
+         <i class="fas fa-home" aria-hidden = "true"></i>
+         <font _mstmutation="1"_msttexthash="2136498"_msthash="3">Home</font>
+         <% end %>
       </li>
       <li>
-        <font _mstmutation="1"><%= link_to "Users", users_path, class: 'nav-link text-right' %></font>
+       <%= link_to  users_path, class: "nav-link text-light" do %>
+         <i class="fas fa-users" aria-hidden = "true"></i>
+         <font _mstmutation="1"_msttexthash="5532488"_msthash="4">Users</font>
+        <% end %>
       </li>
       <li>
-        <font _mstmutation="1"><%= link_to "Books", books_path, class: 'nav-link text-right' %></font>
+        <%= link_to  books_path, class: "nav-link text-light" do %>
+         <i class="fas fa-book-open" aria-hidden = "true"></i>
+         <font _mstmutation="1"_msttexthash="5444816"_msthash="5">Books</font>
+         <% end %>
       </li>
       <li>
-        <font _mstmutation="1"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-right' %></font>
+        <%= link_to  destroy_user_session_path, method: :delete, class: "nav-link text-light" do %>
+         <i class="fas fa-sign-out-alt" aria-hidden = "true"></i>
+         <font _mstmutation="1"_msttexthash="11328460"_msthash="6">Log out</font>
+        <% end %>
       </li>
     <% else %>
       <li>
-        <font _mstmutation="1"><%= link_to "Home", root_path, class: 'nav-link text-right' %></font>
+        <%= link_to root_path, class: "nav-link text-light" do %>
+         <i class="fas fa-home" aria-hidden="true"></i>
+         <font _mstmutation="1"_msttexthash="2136498"_msthash="3">Home</font>
+         <% end %>
       </li>
       <li>
-        <font _mstmutation="1"><%= link_to "About", home_about_path, class: 'nav-link text-right'%></font>
+        <%= link_to about_path, class: "nav-link text-light" do %>
+         <i class="fas fa-link" aria-hidden="true"></i>
+         <font _mstmutation="1" _msttexthash="9943401" _msthash="4">About</font>
+        <% end %>
       </li>
       <li>
-        <font _mstmutation="1"><%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-right' %></font>
+        <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
+         <i class="fas fa-user-plus" aria-hidden="true"></i>
+         <font _mstmutation="1"_msttexthash="9249851"_msthash="5">Sign up</font>
+        <% end %>
       </li>
       <li>
-        <font _mstmutation="1"><%= link_to "Log in", new_user_session_path, class: 'nav-link text-right' %></font>
+        <%= link_to new_user_session_path, class: "nav-link text-light" do %>
+        <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+        <font _mstmutation="1"_msttexthash="5521945"_msthash="6">Log in</font>
+        <% end %>
       </li>
     <% end %>
      </ul>
+      </div>
+     </div>
     </div>
   </nav>
   </header>
